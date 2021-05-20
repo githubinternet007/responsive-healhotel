@@ -1,0 +1,730 @@
+@charset "utf-8";
+@import 'reset';
+
+// body {    margin: 0;    padding: 0;}
+$lb : lightblue;
+$lp: lightpink;
+$r: red;
+$b: black;
+$tmt: tomato;
+$w:#fff;
+
+// width 1599px 이상일 경우
+.wrap {
+    padding-left: 192px;
+    // margin: 0;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 192px;
+    padding: 40px 0 30px;
+    background: $w;
+
+    // transition: position .5s;
+    .logo {
+        a {
+            display: block;
+            width: 170px;
+            height: 146px;
+            margin: 0 auto;
+            background: url(../../images/logo_new.png) 0 0 no-repeat;
+            background-size: cover;
+            text-indent: -9999px;
+        }
+    }
+}
+
+.nav-goto {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    .lst-goto {
+        li {
+            display: inline-block;
+
+            &:last-child a::after {
+                display: none;
+            }
+        }
+
+        a {
+            display: block;
+            position: relative;
+            padding: 7px;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 1px;
+                height: 10px;
+                background: $r;
+                // margin-left: 7px;
+                position: absolute;
+                top: 13px;
+                right: -3px;
+            }
+        }
+    }
+
+    .lst-sns {
+        li {
+            display: inline-block;
+
+            &:first-child a {
+                background-image: url(../../images/sns-facebook.svg);
+
+                &:hover {
+                    background-image: url(../../images/sns-facebook-on.svg);
+                }
+            }
+
+            &:nth-child(2) a {
+                background-image: url(../../images/sns-instagram.svg);
+                margin: 0 3px;
+
+                &:hover {
+                    background-image: url(../../images/sns-instagram-on.svg);
+                }
+            }
+
+            &:last-child a {
+                background-image: url(../../images/sns-youtube.svg);
+
+                &:hover {
+                    background-image: url(../../images/sns-youtube-on.svg);
+                }
+            }
+        }
+
+        a {
+            display: block;
+            width: 37px;
+            height: 37px;
+            // background: $tmt;
+            border-radius: 50%;
+            background-size: 89% auto;
+            background-color: $tmt;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+#gnb {
+    margin: 75px auto 0;
+
+    a {
+        display: block;
+        padding: 8px 0 17px 64px;
+        font-weight: 700;
+        // font-family: 'NanumSquare';
+        font-size: 1.2em;
+
+        &:hover {
+            background: $tmt;
+            color: $w;
+        }
+    }
+}
+
+.util {
+    height: 40px;
+    background: $b;
+    color: $w;
+    // text-indent: -9999px;
+
+    .util_lf {
+        float: left;
+
+        li {
+            float: left;
+        }
+    }
+
+    .util_rt {
+        float: right;
+
+        li {
+            float: left;
+        }
+    }
+
+    a {
+        display: block;
+        height: 40px;
+        line-height: 3.114em;
+        padding: 0 10px;
+        color: lightyellow;
+        font-size: 0.857em;
+        /* 14px 기준에서 12픽셀 */
+        font-weight: bold;
+        font-family: 'Poppins';
+    }
+}
+
+$width:20%;
+$height:25%;
+
+.container {
+    height: calc(100vh - 40px);
+    // background: $lb;
+
+    article {
+        position: relative;
+        float: left;
+        width: $width;
+        height: $height;
+        padding: 30px;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        transition: all .25s;
+        // border: 1px solid $tomato;
+
+        h2 {
+            margin-bottom: 5px;
+            font-size: 1.875em;
+            letter-spacing: -.5px;
+            font-weight: 300;
+
+        }
+
+        h3 {
+            display: none;
+        }
+
+        p {
+            opacity: .7;
+        }
+
+        &:first-child {
+            width: $width * 3;
+            height: $height * 2;
+            background-image: url(../../images/pic1.jpg);
+            opacity: .8;
+            // background-size: cover;
+
+            strong {
+                position: absolute;
+                bottom: 10px;
+                right: -10px;
+                color: $w;
+                font-size: 11em;
+                line-height: .7;
+            }
+        }
+
+        &:nth-child(2) {
+            width: $width * 2;
+            // height: $height * 1;
+            background: $w;
+        }
+
+        &:nth-child(3) {
+            background: #c6f6fa;
+
+            .la-sync {
+                position: absolute;
+                bottom: -40px;
+                right: -40px;
+                color: $w;
+                font-size: 17em;
+                animation: ani-sync 10s infinite both;
+            }
+
+            @keyframes ani-sync {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+
+        &:nth-child(4) {
+            background-image: url(../../images/pic2.jpg);
+            // background-size: cover;
+        }
+
+        &:nth-child(5) {
+            background-image: url(../../images/pic3.jpg);
+            // background-size: cover;
+        }
+
+        &:nth-child(6) {
+            width: $width * 2;
+            background: $w;
+        }
+
+        &:nth-child(7) {
+            background-image: url(../../images/pic4.jpg);
+            // background-size: cover;
+        }
+
+        &:nth-child(8) {
+            background: $w;
+        }
+
+        &:nth-child(9) {
+            width: $width * 2;
+            background-image: url(../../images/pic5.jpg);
+            // background-size: cover;
+        }
+
+        &:nth-child(10) {
+            background-image: url(../../images/pic6.jpg);
+            // background-size: cover;
+        }
+
+        &:nth-child(11) {
+            background: #e6f5fc;
+        }
+
+        &:nth-child(12) {
+            background-image: url(../../images/pic7.jpg);
+        }
+    }
+}
+
+//width 가 1599px 이하일 경우
+// 이 미디어 쿼리는 1281부터 1599까지 적용
+@media screen and (max-width: 1599px) {
+    .wrap {
+        padding-left: 0;
+    }
+
+    #header {
+        // display: flex;
+        position: static;
+        width: 100%;
+        height: 128px;
+        padding: 30px 0;
+
+        .logo {
+            float: left;
+
+            a {
+                display: block;
+                width: 252px;
+                height: 74px;
+                margin: 0 0 0 5px;
+                background: url(../../images/logo2_new.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                text-indent: -9999px;
+            }
+        }
+
+        .nav-goto {
+            display: none;
+        }
+    }
+
+    #gnb {
+        // float:right;
+        margin-top: 0;
+        float: right;
+
+        li {
+            float: left;
+        }
+
+
+        a {
+            height: 128px;
+            line-height: 128px;
+            padding: 0 55px;
+            margin-top: -30px;
+        }
+
+    }
+
+    $height: 250px;
+
+    .container {
+        // height 디폴트 값 auto    
+        overflow: auto;
+        height: auto;
+
+        article {
+            height: $height;
+
+            &:first-child {
+                height: $height * 2;
+            }
+
+            &:nth-child(2) {
+                height: $height;
+            }
+
+            &:nth-child(6) {
+                height: $height;
+            }
+
+            &:nth-child(9) {
+                height: $height;
+            }
+        }
+    }
+}
+
+//width 가 1280px 이하일 경우
+// 이 미디어 쿼리는 0부터 1280까지 적용
+@media screen and (max-width: 1280px) {
+    $width: 25%;
+    $height: 250px;
+
+    #header {
+        height: 115px;
+    }
+
+    #header .logo a {
+        display: block;
+        width: 238px;
+        height: 70px;
+        margin: -3 0 0 5px;
+        background: url(../../images/logo2_new.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        text-indent: -9999px;
+    }
+
+
+    #gnb a {
+        height: 115px;
+        line-height: 115px;
+        padding: 0 35px;
+        margin-top: -30px;
+    }
+
+    .container {
+        article {
+            width: $width;
+            height: $height;
+
+            &:first-child {
+                width: $width * 3;
+                height: $height * 2;
+            }
+
+            &:nth-child(2) {
+                width: $width;
+            }
+
+            &:nth-child(6) {
+                width: $width * 2;
+                background: rgba(179, 179, 179, .6);
+            }
+
+            &:nth-child(7) {
+                width: $width * 2;
+            }
+
+            &:nth-child(9) {
+                width: $width;
+            }
+
+            &:nth-child(10) {
+                width: $width * 2;
+                background: rgb(153, 153, 153);
+
+
+            }
+        }
+    }
+}
+
+// width 1024px 이하일 경우 적용
+@media screen and (max-width: 1024px) {
+    $width: 33.333%;
+
+    #gnb a {
+        padding: 0 25px;
+    }
+
+    .container {
+
+        article {
+            width: $width;
+
+            &:first-child {
+                width: $width * 3;
+                height: 400px;
+                // bottom: 7px;
+                // font-size: 15vw;
+            }
+
+            &:nth-child(2),
+            &:nth-child(6) {
+                width: $width * 2;
+            }
+
+            &:nth-child(9) {
+                width: $width;
+            }
+
+            &:nth-child(4),
+            &:nth-child(7),
+            &:nth-child(10),
+            &:nth-child(12) {
+                display: none;
+            }
+        }
+    }
+}
+
+// width 779px 이하일 경우 적용 화면
+@media screen and (max-width: 779px) {
+    $width: 50%;
+
+    #header {
+        height: 100px;
+        
+        .logo {
+            width: 148px;
+
+            a {
+                width: 200px;
+                margin-top: -5px;
+            }
+        }
+    }
+
+    #gnb a {
+        height: 100px;
+        line-height: 100px;
+        padding: 0 21px;
+        margin-top: -30px;
+        font-weight: 600;
+    }
+
+    .container {
+
+        article {
+            width: $width;
+
+            &:first-child,
+            &:nth-child(2) {
+                width: $width * 2;
+                
+                strong {
+                font-weight:300;
+                }
+
+            }
+
+            &:nth-child(3) {
+                background: #fff;
+
+                h2 {
+                    display: none;
+                }
+
+                .la-sync {
+                    display: none;
+                }
+            }
+
+            &:nth-child(6) {
+                background: $w;
+            }
+
+            &:nth-child(9) {
+                background-image: url(../../images/pic7.jpg);
+            }
+
+            &:nth-child(n+2) {
+                // 3번째 이후의 모든 요소에 적용
+                width: $width;
+            }
+
+            &:last-child {
+                display: block;
+                background-image: url(../../images/pic6.jpg);
+            }
+        }
+    }
+
+}
+
+
+//  width 639px 이하인 경우
+@media screen and (max-width: 639px) {
+    #header {
+        height: 129px;
+        padding-top: 14px;
+
+        .logo {
+            float: none;
+            // margin: 0 auto;
+            width: 100%;
+
+            a {
+                width: 172px;
+                height: 50px;
+                // background-size: contain;
+                // background-repeat: no-repeat;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    #gnb {
+        float: none;
+        // margin-top: 35px;
+        display: flex;
+        justify-content: space-around;
+
+        // ul {
+        //     width: 100%;
+        // }
+
+        // li {
+        //     display: flex;
+        //     justify-content: space-evenly;
+        // }
+
+        a {
+            height: 65px;
+            line-height: 65px;
+            margin-top: 0;
+            padding: 0 27px;
+        }
+    }
+
+
+
+    .util {
+        display: none;
+    }
+
+    $width:50%;
+
+    .container {
+        height: calc(100vh - 129px);
+
+        article {
+            width: $width;
+            //    height: 15%;
+
+            &:first-child {
+                width:$width *2;
+                height: 28%;
+
+                strong {
+                    font-weight: normal;
+                    font-size: 20vw;
+                }
+            }
+
+            &:nth-child(n+2) {
+                height: 18%;
+            }
+            
+            &:nth-child(2),
+            &:nth-child(3) {
+              background: #e6f5fc;
+            }
+
+            &:nth-child(9) {
+                position: relative;
+                  h3 {
+                      position: absolute;
+                      display: block;
+                      font-size: 16vw;
+                      font-weight: normal;
+                      color: $w;
+                      right: 3px;
+                      margin-top: -12px;
+
+                  } 
+            }
+
+            
+
+            p {
+                display: none;
+            }
+
+        }
+    }
+}
+
+// width 479px 이하인 경우
+@media screen and (max-width: 479px) {
+
+    #header {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 1000;
+        width: 70%;
+        height: 80vh;
+        transform: translate(-50%, -50%);
+        background-color: transparent;
+        // display: none;
+
+        .logo {
+            margin-bottom: 23px;
+            // width: 135px;
+            height: 116px;
+
+            a {
+                width: 135px;
+                height: 116px;
+                margin: 0 auto;
+                background-image: url(../../images/logo_new.png);
+                // background-position: 50% 50%;   
+            }
+        }
+    }
+
+    #gnb {
+        li {
+            float: none;
+            margin-bottom: 7px;
+        }
+
+        a {
+            padding: 0;
+            height: 47px;
+            border-radius: 10px;
+            background: rgba($b, .5);
+            color: $w;
+            font-weight: 300;
+            line-height: 47px;
+            width: 200px;
+            padding-left: 60px;
+        }
+    }
+
+    .container {
+        // width: 100%;
+        height: auto;
+
+
+        article {
+            &:first-child {
+                height: 100vh;
+                background-position: 50% 50%;
+
+                strong {
+                    display: none;
+                }                
+            }
+
+            &:nth-child(n+2) {
+                display: none;
+            }
+        }
+    }
+}
